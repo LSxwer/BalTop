@@ -1,0 +1,2 @@
+if game.PlaceId == 62845830305 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
