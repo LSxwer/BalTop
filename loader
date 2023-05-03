@@ -1,4 +1,4 @@
-if game.PlaceId == 9498006165 then 
+if game.PlaceId == 8750997647 then 
     loadstring(game:HttpGet('https://raw.githubusercontent.com/LSxwer/BalTop/main/Tapping%20Simulator%20X'))()
 elseif game.PlaceId == 6284583030 then 
     loadstring(game:Httpget('https://raw.githubusercontent.com/LSxwer/BalTop/main/PetSimuLatorTestLib'))()
