@@ -1,7 +1,4 @@
-    if game.PlaceId == 13230182363 then 
-    else 
-        print('diednow')
-    end    
+  
     
     
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
