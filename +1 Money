@@ -1,0 +1,296 @@
+    if game.PlaceId == 13230182363 then 
+    else 
+        print('diednow')
+    end    
+    
+    
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "Bal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+
+    getgenv().click = true 
+
+    getgenv().egg = true
+
+    getgenv().daily = true 
+    
+    getgenv().equipbest = true
+
+    getgenv().craftall = true 
+
+    getgenv().spin = true 
+
+    getgenv().rebirth = true 
+
+
+
+
+
+    function rebirth()
+        while getgenv().rebirth == true do 
+        
+            
+
+        local args = {
+        [1] = 23
+        }
+
+        game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:rebirth"):FireServer(unpack(args))
+        wait()
+        end
+    end
+
+
+
+
+
+
+    function spin()
+        while getgenv().spin == true do         
+        local args = {
+        [1] = 17
+        }
+
+        game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:spin"):FireServer(unpack(args))
+        wait()
+        end
+    end
+
+
+
+
+
+    function craftall()
+        while getgenv().craftall == true do
+            
+
+        local args = {
+        [1] = 12
+        }
+
+        game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:craftAllPets"):FireServer(unpack(args))
+        wait()
+        end
+    end
+            
+
+
+    function click()
+        while getgenv().click == true do 
+            game:GetService("ReplicatedStorage"):FindFirstChild("events-shared/network@GlobalEvents").placeBlock:FireServer()
+            wait(.0000000000000000000000000000000000000000001)
+        end
+    end
+
+    function egg(eggtype)
+        while getgenv().egg == true do 
+            local args = {
+                [1] = 1,
+                [2] = "Grass Egg"
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:openEgg"):FireServer(unpack(args))
+            wait()
+        
+        end
+    end
+
+    function daily()
+        while getgenv().daily == true do
+            local args = {
+                [1] = 0,
+                [2] = 60
+            }
+            local args = {
+                [1] = 1,
+                [2] = 180
+            }
+            local args = {
+                [1] = 2,
+                [2] = 180
+            } 
+
+            local args = {
+                [1] = 2,
+                [2] = 300
+            }
+            
+            
+            
+            
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            wait()
+        end
+    end
+
+
+
+                                    
+
+
+
+
+
+    local Tab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+
+
+    Tab:AddToggle({
+        Name = "Arebirth",
+        Default = false,
+        Callback = function(Value)
+            getgenv().rebirth = Value
+            rebirth()
+        end    
+    })
+
+
+
+    Tab:AddToggle({
+        Name = "Click",
+        Default = false,
+        Callback = function(Value)
+            getgenv().click = Value
+            click()
+        end    
+    })
+
+
+
+
+
+    Tab:AddToggle({
+        Name = "Autoclaim",
+        Default = false,
+        Callback = function(Value2)
+            getgenv().daily = Value2
+            daily()
+        end    
+    })
+
+
+
+
+    Tab:AddButton({
+        Name = "equipbest",
+        Callback = function()
+
+
+            local args = {
+                [1] = 1
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:equipBestPets"):FireServer(unpack(args))
+            
+
+            
+                
+        end    
+    })
+
+
+    Tab:AddToggle({
+        Name = "AutoCraft",
+        Default = false,
+        Callback = function(Value)
+        getgenv().craftall = Value
+        craftall()
+        end    
+    })
+
+    local Tab = Window:MakeTab({
+        Name = "GachaLite",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+
+    -- Tab:AddDropdown({
+    -- 	Name = "Dropdown",
+    -- 	Default = "1",
+    -- 	Options = {"1", "2"},
+    -- 	Callback = function(Value)
+    -- 		print(Value)
+    -- 	end    
+    -- })
+    Tab:AddToggle({
+        Name = "Btw t",
+        Default = false,
+        Tab:AddDropdown({
+            Default = "s",
+            Options = {"s", "v"},                 
+            Callback = function()
+            print('HelloWorld')
+            wait()
+            end
+        
+        
+
+        })
+    })
+
+    Tab:AddToggle({
+        Name = "AutoSpin",
+        Default = false,
+        
+        Callback = function(Value)
+            getgenv().spin = Value
+            spin()
+        end    
+    })
+
+
+    Tab:AddButton({
+        Name = "OpenEgg",
+        Callback = function()
+            local args = {
+                [1] = 1,
+                [2] = "Grass Egg"
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:openEgg"):FireServer(unpack(args))
+            wait()
+        end    
+    })
+
+
+
+    local Tab = Window:MakeTab({
+        Name = "Misc",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    Tab:AddButton({
+        Name = "DestroyLib",
+        Callback = function()
+            OrionLib:Destroy()
+        end    
+    })
+
+
+    Tab:AddButton({
+        Name = "Redeem Code",
+        Callback = function()
+            local args = {
+                [1] = 27,
+                [2] = "luckyfrog"
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:redeemCode"):FireServer(unpack(args))
+            wait()
+            local args = {
+                [1] = 27,
+                [2] = "KUBO"
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:redeemCode"):FireServer(unpack(args))
+            wait()
+        end    
+    })
