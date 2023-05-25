@@ -3,5 +3,5 @@ if game.PlaceId == 8750997647 then
 elseif game.PlaceId == 6284583030 then 
     loadstring(game:Httpget('https://raw.githubusercontent.com/LSxwer/BalTop/main/PetSimuLatorTestLib'))()
 elseif game.PlaceId == 13230182363 then   
-    loadstring(game:Httpget("https://raw.githubusercontent.com/LSxwer/BalTop/main/%2B1%20Money"))()
+    loadstring(game:Httpget('https://raw.githubusercontent.com/LSxwer/BalTop/main/%2B1%20Money'))()
 end
