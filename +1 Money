@@ -1,24 +1,55 @@
-  
-    
-    
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
     local Window = OrionLib:MakeWindow({Name = "Bal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+    if getgenv == "deptrai" or "premloader" then 
+        print('Successfully authen')
+    else 
+        OrionLib:MakeNotification({
+            Name = "Invalid Key!",
+            Content = "Join our discord for one :D",
+            Image = "rbxassetid://4483345998",
+            Time = 100
+            
+        })
+        local Tab = Window:MakeTab({
+            Name = "Discord",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+        local Section = Tab:AddSection({
+            Name = "DiscordLink"
+        })
+        Tab:AddButton({
+            Name = "DiscordHere",
+            Callback = function()
+                print()
+              end    
+        })
+        Tab:AddTextbox({
+            Name = "Discord",
+            Default = "https://discord.gg/fHzsmqUxDM",
+            TextDisappear = false,
+            Callback = function(Value)
+                print(Value)
+            end	  
+        })
+        
+
+
+        OrionLib:Destroy(wait(111111))
+    end
 
 
 
     getgenv().click = true 
-
     getgenv().egg = true
-
     getgenv().daily = true 
-    
     getgenv().equipbest = true
-
     getgenv().craftall = true 
-
     getgenv().spin = true 
-
     getgenv().rebirth = true 
+ 
 
 
 
@@ -118,6 +149,7 @@
             
             
             game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            
             wait()
         end
     end
@@ -162,14 +194,14 @@
 
 
 
-    Tab:AddToggle({
-        Name = "Autoclaim",
-        Default = false,
-        Callback = function(Value2)
-            getgenv().daily = Value2
-            daily()
-        end    
-    })
+    -- Tab:AddToggle({
+    --     Name = "Autoclaim",
+    --     Default = false,
+    --     Callback = function(Value2)
+    --         getgenv().daily = Value2
+    --         daily()
+    --     end    
+    -- })
 
 
 
@@ -184,6 +216,7 @@
             }
             
             game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:equipBestPets"):FireServer(unpack(args))
+            
             
 
             
@@ -290,4 +323,74 @@
             game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:redeemCode"):FireServer(unpack(args))
             wait()
         end    
+    })
+
+
+    Tab:AddButton({
+        Name = "Claim Online Gift",
+        Callback = function()
+            local args = {
+                [1] = 4,
+                [2] = 60
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            local args = {
+                [1] = 5,
+                [2] = 180
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            local args = {
+                [1] = 6,
+                [2] = 300
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            local args = {
+                [1] = 8,
+                [2] = 600
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args)) 
+            local args = {
+                [1] = 7,
+                [2] = 420
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            local args = {
+                [1] = 9,
+                [2] = 900
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            local args = {
+                [1] = 10,
+                [2] = 1200
+            }
+            
+            game:GetService("ReplicatedStorage"):FindFirstChild("functions-shared/network@GlobalFunctions"):FindFirstChild("s:claimTimeGift"):FireServer(unpack(args))
+            
+            
+                                
+        
+        end    
+    })
+
+    Tab:AddTextbox({
+        Name = "Walkspeed change",
+        Default = "",
+        TextDisappear = true,
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+        end	  
+    })
+    Tab:AddTextbox({
+        Name = "Jump Power Change(btw this suck)",
+        Default = "",
+        TextDisappear = true,
+        Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+        end	  
     })
