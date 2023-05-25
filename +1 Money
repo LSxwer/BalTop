@@ -2,7 +2,7 @@
     local Window = OrionLib:MakeWindow({Name = "Bal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
-    if getgenv == "deptrai" or "premloader" then 
+    if key == "deptrai"  then 
         print('Successfully authen')
     else 
         OrionLib:MakeNotification({
